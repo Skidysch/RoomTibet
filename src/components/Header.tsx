@@ -85,7 +85,7 @@ const Header = () => {
             <ul
               className={`${
                 burgerIsactive ? "" : "translate-x-full"
-              } transition-transform duration-300 w-[100vw] h-[100vh] bg-primary-main absolute grid place-items-center top-0 left-0`}
+              } transition-transform duration-300 w-[100dvw] h-[100dvh] bg-primary-main absolute grid place-items-center top-0 left-0`}
             >
               <Menu {...HeaderMenuItems} />
             </ul>

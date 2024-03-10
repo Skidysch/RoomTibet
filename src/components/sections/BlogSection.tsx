@@ -3,6 +3,8 @@ import SectionInfo, { SectionInfoProps } from "../SectionInfo";
 import BlogCard, { BlogCardProps } from "../BlogCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+import 'swiper/css';
+
 const BlogSection = ({ isMobileView }) => {
 
   const BlogSectionCards: BlogCardProps[] = [
@@ -36,7 +38,7 @@ const BlogSection = ({ isMobileView }) => {
     },
   ];
 
-  const SwiperLayout = (
+  const SwiperLayout = () => (
     <Swiper
       slidesPerView={"auto"}
       spaceBetween={20}
@@ -44,15 +46,15 @@ const BlogSection = ({ isMobileView }) => {
       className="w-full pb-1"
     >
       {BlogSectionCards.map((item, index) => (
-        <SwiperSlide key={index} className="w-auto h-auto">
+        <SwiperSlide key={index} className="swiper-slide w-auto h-auto">
           <BlogCard {...item} />
         </SwiperSlide>
       ))}
     </Swiper>
   );
 
-  const GridLayout = (
-    <ul className="grid gap-5 grid-cols-2 max-sm:flex">
+  const GridLayout = () => (
+    <ul className="grid gap-5 grid-cols-2">
       {BlogSectionCards.map((item, index) => (
         <li key={index} className="flex justify-center">
           <BlogCard {...item} />
@@ -64,7 +66,7 @@ const BlogSection = ({ isMobileView }) => {
   const BlogSectionProps: SectionInfoProps = {
     titleDescription: "делимся впечатлениями",
     title: "Блог о путешествиях",
-    body: isMobileView ? SwiperLayout : GridLayout,
+    body: isMobileView ? <SwiperLayout /> : <GridLayout />,
     button: "Другие материалы",
     centered: true,
   };

@@ -2,11 +2,14 @@ import React from "react";
 import SectionInfo, { SectionInfoProps } from "../SectionInfo";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+import "swiper/css";
+
 interface PhotoSectionListItemsProps {
   label: string;
 }
 
 const PhotoSection = ({ isMobileView }) => {
+
   const PhotoSectionListItems: PhotoSectionListItemsProps[] = [
     {
       label: "photo-section-1.jpg",
@@ -29,9 +32,14 @@ const PhotoSection = ({ isMobileView }) => {
   ];
 
   const SwiperLayout = (
-    <Swiper slidesPerView={"auto"} spaceBetween={20} rewind={true} className="w-full">
+    <Swiper
+      slidesPerView={"auto"}
+      spaceBetween={20}
+      rewind={true}
+      className="w-full"
+    >
       {PhotoSectionListItems.map((item, index) => (
-        <SwiperSlide key={index} className="w-auto h-auto">
+        <SwiperSlide key={index} className="swiper-slide w-auto h-auto">
           <div className="h-full w-full max-sm:w-[280px] max-sm:h-[250px]">
             <img
               src={item.label}
@@ -45,7 +53,7 @@ const PhotoSection = ({ isMobileView }) => {
   );
 
   const GridLayout = (
-    <ul className="flex sm:grid sm:grid-cols-4 sm:grid-rows-2 gap-5">
+    <ul className="sm:grid sm:grid-cols-4 sm:grid-rows-2 gap-5">
       {PhotoSectionListItems.map((item, index) => (
         <li
           key={index}
