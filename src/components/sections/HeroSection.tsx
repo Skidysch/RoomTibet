@@ -48,7 +48,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="h-[100dvh] bg-[url('hero-bg.jpg')] bg-no-repeat bg-cover">
+    <section className="h-[100dvh] bg-no-repeat bg-cover" style={{backgroundImage: "url('hero-bg.jpg')"}}>
       <div className="max-sm:relative px-4 container h-full pb-20 max-sm:pb-12">
         <div className="flex flex-col justify-end items-start gap-10 h-full">
           <h1 className="max-sm:text-[28px] max-sm:leading-normal text-5xl uppercase leading-normal font-bold">
